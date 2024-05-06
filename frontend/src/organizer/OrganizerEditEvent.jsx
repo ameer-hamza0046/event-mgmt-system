@@ -59,69 +59,71 @@ const OrganizerEditEvent = () => {
     .split("T")[0];
 
   return (
-    <div className="org-container">
+    <>
       <OrganizerNavbar />
-      <div className="edit-page">
-      <h2>Edit Event</h2>
-      {loading ? (
-        <Spinner />
-      ) : (
-        <form>
-          <div className="form-group">
-            <label>Event Name</label>
-            <input
-              type="text"
-              className="form-control"
-              value={event.name}
-              onChange={(e) => {
-                setEvent({ ...event, name: e.target.value });
-              }}
-            />
-          </div>
-          <div className="form-group">
-            <label>Event Date</label>
-            <input
-              type="date"
-              className="form-control"
-              value={event.date.split("T")[0]}
-              onChange={(e) => {
-                setEvent({ ...event, date: e.target.value });
-              }}
-              min={minDate}
-              max={maxDate}
-            />
-          </div>
-          <div className="form-group">
-            <label>Event Status</label>
-            <input
-              type="text"
-              className="form-control"
-              value={event.status}
-              readOnly
-            />
-          </div>
-          <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-            <Link
-              to={`/organizer/${id}/my-events`}
-              type="button"
-              className="btn btn-secondary px-4 me-md-2"
-            >
-              Go Back
-            </Link>
-            <Link
-              to=""
-              onClick={handleEditEvent}
-              type="button"
-              className="btn btn-success px-4"
-            >
-              Request Edit
-            </Link>
-          </div>
-        </form>
-      )}
+      <div className="container">
+        <div className="edit-page">
+          <h2>Edit Event</h2>
+          {loading ? (
+            <Spinner />
+          ) : (
+            <form>
+              <div className="form-group">
+                <label>Event Name</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  value={event.name}
+                  onChange={(e) => {
+                    setEvent({ ...event, name: e.target.value });
+                  }}
+                />
+              </div>
+              <div className="form-group">
+                <label>Event Date</label>
+                <input
+                  type="date"
+                  className="form-control"
+                  value={event.date.split("T")[0]}
+                  onChange={(e) => {
+                    setEvent({ ...event, date: e.target.value });
+                  }}
+                  min={minDate}
+                  max={maxDate}
+                />
+              </div>
+              <div className="form-group">
+                <label>Event Status</label>
+                <input
+                  type="text"
+                  className="form-control"
+                  value={event.status}
+                  readOnly
+                />
+              </div>
+              <div className="d-grid gap-2 d-md-flex justify-content-md-start">
+                <Link
+                  to={`/organizer/${id}/my-events`}
+                  type="button"
+                  className="btn btn-secondary px-4 me-md-2"
+                >
+                  Go Back
+                </Link>
+                <Link
+                  to=""
+                  onClick={handleEditEvent}
+                  type="button"
+                  className="btn btn-success px-4"
+                >
+                  Request Edit
+                </Link>
+              </div>
+            </form>
+          )}
+        </div>
       </div>
       <OrganizerFooter />
-    </div>
+    </>
   );
 };
 

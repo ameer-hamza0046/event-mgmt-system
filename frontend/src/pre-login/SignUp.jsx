@@ -50,8 +50,8 @@ const SignUp = () => {
   return (
     <>
       <Navbar />
-      <div className="container-next">
-        <h2 className="mt-4">Sign Up</h2>
+      <div className="container container-next">
+        <h2>Sign Up</h2>
         <form>
           <div className="form-group">
             <label>Name</label>

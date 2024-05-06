@@ -110,7 +110,7 @@ const ParticipantShowEvent = () => {
   return (
     <>
       <ParticipantNavbar />
-      <div className="container mt-4">
+      <div className="container">
         <h2>Event Details</h2>
         {loading ? (
           <Spinner />

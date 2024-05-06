@@ -39,10 +39,11 @@ const Contact = () => {
               defaultValue={""}
             />
           </div>
-
-          <button type="submit" className="btn btn-success btn-one">
-            Submit
-          </button>
+          <div className="btn-center-class">
+            <button type="submit" className="btn btn-success btn-one">
+              Submit
+            </button>
+          </div>
         </form>
       </div>
       <Footer />

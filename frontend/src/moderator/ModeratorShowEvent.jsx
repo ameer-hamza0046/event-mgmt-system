@@ -269,15 +269,19 @@ const ModeratorShowEvent = () => {
   const { id, eventId } = useParams();
   // useState and useEffect
   const [event, setEvent] = useState({});
+  const [organizer, setOrganizer] = useState({});
   const [loading, setLoading] = useState(true);
   ///////////
   useEffect(() => {
     const fun = async () => {
       try {
-        const response = await axios.get(
+        let response = await axios.get(
           `http://localhost:5555/events/${eventId}`
         );
+        const orgId = response.data.organizerId;
         setEvent(response.data);
+        response = await axios.get(`http://localhost:5555/users/${orgId}`);
+        setOrganizer(response.data);
         setLoading(false);
       } catch (error) {
         console.log(error);
@@ -286,65 +290,75 @@ const ModeratorShowEvent = () => {
     fun();
   }, []);
   return (
-    <div className="org-container">
+    <>
       <ModeratorNavBar />
-      <h2>Event Details</h2>
-      {loading ? (
-        <Spinner />
-      ) : (
-        <div>
-          <div className="form-group">
-            <label>Event Name</label>
-            <input
-              type="text"
-              className="form-control"
-              value={event.name}
-              readOnly
-            />
-          </div>
-          <div className="form-group">
-            <label>Event Date</label>
-            <input
-              type="date"
-              className="form-control"
-              value={event.date.split("T")[0]}
-              readOnly
-            />
-          </div>
-          <div className="form-group">
-            <label>Event Status</label>
-            <input
-              type="text"
-              className="form-control"
-              value={event.status}
-              readOnly
-            />
-          </div>
-          <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-            <Link
-              to={`/moderator/${id}/view-pending-events`}
-              type="button"
-              className="btn btn-secondary px-4 me-md-2"
-            >
-              Go Back
-            </Link>
-            <button className="btn btn-success btn-wow me-md-2 px-4">
-              <a
-                href="https://www.mandurah.wa.gov.au/-/media/files/com/downloads/explore/events/organisers/events-application-form.pdf"
-                target="blank"
-                
+      <div className="container">
+        <h2>Event Details</h2>
+        {loading ? (
+          <Spinner />
+        ) : (
+          <div>
+            <div className="form-group">
+              <label>Event Name</label>
+              <input
+                type="text"
+                className="form-control"
+                value={event.name}
+                readOnly
+              />
+            </div>
+            <div className="form-group">
+              <label>Organizer Name</label>
+              <input
+                type="text"
+                className="form-control"
+                value={organizer.name}
+                readOnly
+              />
+            </div>
+            <div className="form-group">
+              <label>Event Date</label>
+              <input
+                type="date"
+                className="form-control"
+                value={event.date.split("T")[0]}
+                readOnly
+              />
+            </div>
+            <div className="form-group">
+              <label>Event Status</label>
+              <input
+                type="text"
+                className="form-control"
+                value={event.status}
+                readOnly
+              />
+            </div>
+            <div className="d-grid gap-2 d-md-flex justify-content-md-start">
+              <Link
+                to={`/moderator/${id}/view-pending-events`}
+                type="button"
+                className="btn btn-secondary px-4 me-md-2"
               >
-                View Application Form
-              </a>
-            </button>
-            <ModeratorCommentsModal />
-            <AddCommentModal />
-            <ApproveEventModal event={event} />
+                Go Back
+              </Link>
+              <button className="btn btn-success btn-wow me-md-2 px-4">
+                <a
+                  href="https://www.mandurah.wa.gov.au/-/media/files/com/downloads/explore/events/organisers/events-application-form.pdf"
+                  target="blank"
+                >
+                  View Application Form
+                </a>
+              </button>
+              <ModeratorCommentsModal />
+              <AddCommentModal />
+              <ApproveEventModal event={event} />
+            </div>
           </div>
-        </div>
-      )}
-      <ModeratorFooter id={id} />
-    </div>
+        )}
+      </div>
+      <ModeratorFooter />
+    </>
   );
 };
 

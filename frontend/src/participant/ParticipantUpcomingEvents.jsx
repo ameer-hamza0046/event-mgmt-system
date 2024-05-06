@@ -143,7 +143,7 @@ const UpcomingEvents = () => {
   return (
     <>
       <ParticipantNavbar />
-      <div className="container mt-4">
+      <div className="container">
         <h2>Upcoming Events</h2>
         {loading ? (
           <Spinner />

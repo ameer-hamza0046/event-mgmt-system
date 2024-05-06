@@ -23,11 +23,13 @@ const ParticipantHome = () => {
     fun();
   }, []);
   return (
-    <div className="org-container">
+    <>
       <ParticipantNavbar />
-      {loading ? <Spinner /> : <UserDetails user={user} />}
+      <div className="container">
+        {loading ? <Spinner /> : <UserDetails user={user} />}
+      </div>
       <ParticipantFooter />
-    </div>
+    </>
   );
 };
 

@@ -311,47 +311,49 @@ const OrganizerShowEvent = () => {
     fun();
   }, []);
   return (
-    <div className="container">
+    <>
       <OrganizerNavbar />
-      <h2>Event Details</h2>
-      {loading ? (
-        <Spinner />
-      ) : (
-        <div>
-          <div className="form-group">
-            <label>Event Name</label>
-            <input
-              type="text"
-              className="form-control"
-              value={event.name}
-              readOnly
-            />
+      <div className="container">
+        <h2>Event Details</h2>
+        {loading ? (
+          <Spinner />
+        ) : (
+          <div>
+            <div className="form-group">
+              <label>Event Name</label>
+              <input
+                type="text"
+                className="form-control"
+                value={event.name}
+                readOnly
+              />
+            </div>
+            <div className="form-group">
+              <label>Event Date</label>
+              <input
+                type="date"
+                className="form-control"
+                value={event.date.split("T")[0]}
+                readOnly
+              />
+            </div>
+            <div className="d-grid gap-2 d-md-flex justify-content-md-start">
+              <Link
+                to={`/organizer/${id}/my-events`}
+                type="button"
+                className="btn btn-outline-secondary px-4 me-md-2"
+              >
+                Go Back
+              </Link>
+              <ListOfParticipantModal />
+              <EventNotifications />
+              <SendNotification />
+            </div>
           </div>
-          <div className="form-group">
-            <label>Event Date</label>
-            <input
-              type="date"
-              className="form-control"
-              value={event.date.split("T")[0]}
-              readOnly
-            />
-          </div>
-          <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-            <Link
-              to={`/organizer/${id}/my-events`}
-              type="button"
-              className="btn btn-outline-secondary px-4 me-md-2"
-            >
-              Go Back
-            </Link>
-            <ListOfParticipantModal />
-            <EventNotifications />
-            <SendNotification />
-          </div>
-        </div>
-      )}
+        )}
+      </div>
       <OrganizerFooter />
-    </div>
+    </>
   );
 };
 

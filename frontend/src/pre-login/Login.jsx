@@ -32,9 +32,8 @@ const Login = () => {
   };
   return (
     <>
-      {" "}
       <Navbar />
-      <div className="container-next-login ">
+      <div className="container container-next">
         <form>
           <h2>Login</h2>
           <div className="form-group">
@@ -74,7 +73,9 @@ const Login = () => {
             Sign In
           </button>
           <p>
-            <Link to="/signup" className="btn-new hello" >Sign Up</Link>
+            <Link to="/signup" className="btn-new hello">
+              Sign Up
+            </Link>
           </p>
         </form>
       </div>

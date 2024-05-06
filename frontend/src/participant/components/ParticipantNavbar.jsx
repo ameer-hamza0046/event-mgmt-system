@@ -4,8 +4,8 @@ import { Link, useParams } from "react-router-dom";
 const ParticipantNavbar = () => {
   const { id } = useParams();
   return (
-    <nav className="navbar navbar-expand-lg ">
-      <Link className="navbar-brand text-success" to={`/participant/${id}`}>
+    <nav className="navbar navbar-expand-lg navwidth">
+      <Link className="navbar-brand text-green" to={`/participant/${id}`}>
         AmiEvents
       </Link>
       <button
@@ -21,26 +21,29 @@ const ParticipantNavbar = () => {
       </button>
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
-          <li className="nav-item">
-            <Link className={`nav-link text-success h4 mt-1`} to={`/participant/${id}`}>
+          <li className="nav-item ">
+            <Link className="nav-link text-light" to={`/participant/${id}`}>
               Home
             </Link>
           </li>
           <li className="nav-item">
-            <Link className={`nav-link text-success h4 mt-1`} to={`/participant/${id}/my-events`}>
+            <Link
+              className="nav-link text-light"
+              to={`/participant/${id}/my-events`}
+            >
               My Events
             </Link>
           </li>
           <li className="nav-item">
             <Link
-              className={`nav-link text-success h4 mt-1`}
+              className="nav-link text-light "
               to={`/participant/${id}/upcoming-events`}
             >
               Upcoming Events
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link text-success h4 mt-1" to="/">
+            <Link className="nav-link text-light" to="/">
               Sign Out
             </Link>
           </li>

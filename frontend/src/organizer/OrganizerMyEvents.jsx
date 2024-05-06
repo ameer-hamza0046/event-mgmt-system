@@ -85,7 +85,6 @@ const EventModal = ({ event }) => {
                     readOnly
                   />
                 </div>
-                
               </form>
               <hr />
               <ModeratorComments eventId={event._id} />
@@ -98,10 +97,15 @@ const EventModal = ({ event }) => {
               >
                 Close
               </button>
-              <button onClick={handleEditEvent} className="btn btn-success btn-wow">
+              <button
+                onClick={handleEditEvent}
+                className="btn btn-success btn-wow"
+              >
                 Request Edit in Event
               </button>
-              <a href="./abc.html"><button className="btn-wow-one btn-success">Budget</button></a>
+              <a href="./abc.html">
+                <button className="btn btn-wow-one btn-success">Budget</button>
+              </a>
               <button
                 onClick={handleShowParticipants}
                 className="btn btn-success btn-wow-one"
@@ -109,7 +113,6 @@ const EventModal = ({ event }) => {
               >
                 Show Participants
               </button>
-              
             </div>
           </div>
         </div>
@@ -138,41 +141,43 @@ const OrganizerMyEvents = () => {
     fun();
   }, []);
   return (
-    <div className="org-container">
+    <>
       <OrganizerNavbar />
-      <h2>My Events</h2>
-      {loading ? (
-        <Spinner />
-      ) : events.length === 0 ? (
-        <div>No events are found to be created by you.</div>
-      ) : (
-        <table className="table">
-          <thead>
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Event Name</th>
-              <th scope="col">Time</th>
-              <th scope="col">Status</th>
-              <th scope="col">Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {events.map((e, index) => (
-              <tr key={index}>
-                <th scope="row">{index + 1}</th>
-                <td>{e.name}</td>
-                <td>{new Date(e.date).toLocaleString().split(",")[0]}</td>
-                <td>{e.status}</td>
-                <td>
-                  <EventModal event={e} />
-                </td>
+      <div className="container">
+        <h2>My Events</h2>
+        {loading ? (
+          <Spinner />
+        ) : events.length === 0 ? (
+          <div>No events are found to be created by you.</div>
+        ) : (
+          <table className="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Event Name</th>
+                <th scope="col">Time</th>
+                <th scope="col">Status</th>
+                <th scope="col">Actions</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
+            </thead>
+            <tbody>
+              {events.map((e, index) => (
+                <tr key={index}>
+                  <th scope="row">{index + 1}</th>
+                  <td>{e.name}</td>
+                  <td>{new Date(e.date).toLocaleString().split(",")[0]}</td>
+                  <td>{e.status}</td>
+                  <td>
+                    <EventModal event={e} />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
+      </div>
       <OrganizerFooter />
-    </div>
+    </>
   );
 };
 
