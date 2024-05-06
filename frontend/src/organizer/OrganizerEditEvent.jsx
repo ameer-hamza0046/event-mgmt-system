@@ -59,8 +59,9 @@ const OrganizerEditEvent = () => {
     .split("T")[0];
 
   return (
-    <div className="container">
+    <div className="org-container">
       <OrganizerNavbar />
+      <div className="edit-page">
       <h2>Edit Event</h2>
       {loading ? (
         <Spinner />
@@ -103,7 +104,7 @@ const OrganizerEditEvent = () => {
             <Link
               to={`/organizer/${id}/my-events`}
               type="button"
-              className="btn btn-outline-secondary px-4 me-md-2"
+              className="btn btn-secondary px-4 me-md-2"
             >
               Go Back
             </Link>
@@ -111,13 +112,14 @@ const OrganizerEditEvent = () => {
               to=""
               onClick={handleEditEvent}
               type="button"
-              className="btn btn-primary px-4"
+              className="btn btn-success px-4"
             >
               Request Edit
             </Link>
           </div>
         </form>
       )}
+      </div>
       <OrganizerFooter />
     </div>
   );

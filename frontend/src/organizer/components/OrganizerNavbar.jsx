@@ -22,9 +22,9 @@ const OrganizerNavbar = () => {
   //   },
   // ];
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <Link className="navbar-brand" to={`/organizer/${id}`}>
-        Navbar
+    <nav className="navbar navbar-expand-lg nav-org">
+      <Link className="navbar-brand text-success" to={`/organizer/${id}`}>
+        AmiEvents
       </Link>
       <button
         className="navbar-toggler"
@@ -52,24 +52,26 @@ const OrganizerNavbar = () => {
         </ul> */}
         <ul className="navbar-nav">
           <li className="nav-item">
-            <Link className="nav-link" to={`/organizer/${id}`}>
+            <Link className="nav-link text-light" to={`/organizer/${id}`}>
               Home
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to={`/organizer/${id}/create-event`}>
+            <Link className="nav-link text-light" to={`/organizer/${id}/create-event`}>
               Create Event
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to={`/organizer/${id}/my-events`}>
+            <Link className="nav-link text-light" to={`/organizer/${id}/my-events`}>
               My Events
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/">
+            
+            <Link className="nav-link text-light" to="/">
               Sign Out
             </Link>
+              
           </li>
         </ul>
       </div>

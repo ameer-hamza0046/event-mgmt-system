@@ -30,7 +30,7 @@ const UnParticipateModal = ({ event }) => {
       {/* Button trigger modal */}
       <button
         type="button"
-        className="btn btn-outline-primary"
+        className="btn btn-danger"
         data-toggle="modal"
         data-target={`#unparticipate${eventId}`}
       >
@@ -139,7 +139,7 @@ const ParticipantShowEvent = () => {
               <Link
                 to={`/organizer/${id}/my-events`}
                 type="button"
-                className="btn btn-outline-secondary px-4 me-md-2"
+                className="btn btn-secondary px-4 me-md-2"
               >
                 Go Back
               </Link>

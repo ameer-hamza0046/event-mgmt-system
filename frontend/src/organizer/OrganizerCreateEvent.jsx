@@ -56,52 +56,59 @@ const OrganizerCreateEvent = () => {
     .toISOString()
     .split("T")[0];
   return (
-    <div className="container">
+    <>
       <OrganizerNavbar />
-      <form>
-        <h2>Create Event</h2>
-        <div className="form-group">
-          <label>Event Name</label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Enter name of the event"
-            value={eventName}
-            onChange={(e) => setEventName(e.target.value)}
-          />
-        </div>
-        <div className="form-group">
-          <label>Event Date</label>
-          <input
-            type="date"
-            className="form-control"
-            value={eventDate}
-            onChange={(e) => setEventDate(e.target.value)}
-            min={minDate}
-            max={maxDate}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="exampleFormControlFile1">
-            Upload Your Application
-          </label>
-          <input
-            type="file"
-            className="form-control-file"
-            id="exampleFormControlFile1"
-          />
-          <small>
-            Remember to follow all the guidelines. See the sample application
-            for reference.
-          </small>
-        </div>
+      <div className="container">
+        <div className="edit-page">
+          <form>
+            <h2>Create Event</h2>
+            <div className="form-group">
+              <label>Event Name</label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Enter name of the event"
+                value={eventName}
+                onChange={(e) => setEventName(e.target.value)}
+              />
+            </div>
+            <div className="form-group">
+              <label>Event Date</label>
+              <input
+                type="date"
+                className="form-control"
+                value={eventDate}
+                onChange={(e) => setEventDate(e.target.value)}
+                min={minDate}
+                max={maxDate}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="exampleFormControlFile1">
+                Upload Your Application
+              </label>
+              <input
+                type="file"
+                className="form-control-file"
+                id="exampleFormControlFile1"
+              />
+              <small>
+                Remember to follow all the guidelines. See the sample
+                application for reference.
+              </small>
+            </div>
 
-        <button onClick={handleCreateEvent} className="btn btn-primary">
-          Create Event
-        </button>
-      </form>
+            <button
+              onClick={handleCreateEvent}
+              className="btn btn-success btn-wow-one "
+            >
+              Create Event
+            </button>
+          </form>
+        </div>
+      </div>
       <OrganizerFooter />
-    </div>
+    </>
   );
 };
 

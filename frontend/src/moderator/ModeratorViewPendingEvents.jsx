@@ -132,8 +132,9 @@ const ModeratorViewPendingEvents = () => {
     fun();
   }, []);
   return (
-    <div className="container">
+    <div className="org-container">
       <ModeratorNavbar />
+      <div className="edit-page">
       {loading ? (
         <Spinner />
       ) : (
@@ -145,7 +146,7 @@ const ModeratorViewPendingEvents = () => {
             <table className="table">
               <thead>
                 <tr>
-                  <th scope="col">#</th>
+                  <th scope="col">S.No</th>
                   <th scope="col">Event Name</th>
                   <th scope="col">Date</th>
                   <th scope="col">Organizer Name</th>
@@ -169,6 +170,9 @@ const ModeratorViewPendingEvents = () => {
           )}
         </>
       )}
+
+      </div>
+      
       <ModeratorFooter />
     </div>
   );

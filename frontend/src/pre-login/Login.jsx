@@ -34,7 +34,7 @@ const Login = () => {
     <>
       {" "}
       <Navbar />
-      <div className="container mt-4">
+      <div className="container-next-login ">
         <form>
           <h2>Login</h2>
           <div className="form-group">
@@ -70,11 +70,11 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <button onClick={handleSignIn} className="btn btn-primary">
+          <button onClick={handleSignIn} className="btn btn-secondary btn-new">
             Sign In
           </button>
           <p>
-            <Link to="/signup">Sign Up</Link>
+            <Link to="/signup" className="btn-new hello" >Sign Up</Link>
           </p>
         </form>
       </div>

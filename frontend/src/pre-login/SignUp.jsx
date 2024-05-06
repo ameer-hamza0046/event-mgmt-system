@@ -50,7 +50,7 @@ const SignUp = () => {
   return (
     <>
       <Navbar />
-      <div className="container">
+      <div className="container-next">
         <h2 className="mt-4">Sign Up</h2>
         <form>
           <div className="form-group">
@@ -116,7 +116,7 @@ const SignUp = () => {
               onChange={(e) => setReEnterPassword(e.target.value)}
             />
           </div>
-          <button onClick={handleSignUp} className="btn btn-primary">
+          <button onClick={handleSignUp} className="btn btn-secondary">
             Sign Up
           </button>
         </form>

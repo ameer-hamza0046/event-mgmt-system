@@ -23,7 +23,7 @@ const EventModal = ({ event }) => {
       {/* Button trigger modal */}
       <button
         type="button"
-        className="btn btn-light"
+        className="btn btn-success"
         data-toggle="modal"
         data-target={`#staticBackdrop${event._id}`}
       >
@@ -39,7 +39,7 @@ const EventModal = ({ event }) => {
         aria-labelledby="staticBackdropLabel"
         aria-hidden="true"
       >
-        <div className="modal-dialog modal-lg">
+        <div className="modal-dialog modal-lg body-one">
           <div className="modal-content">
             <div className="modal-header">
               <h5 className="modal-title" id="staticBackdropLabel">
@@ -56,7 +56,7 @@ const EventModal = ({ event }) => {
               </button>
             </div>
             {/* Body of the modal is starting here */}
-            <div className="modal-body">
+            <div className="modal-body list-one">
               <form>
                 <div className="form-group">
                   <label>Event Name</label>
@@ -85,6 +85,7 @@ const EventModal = ({ event }) => {
                     readOnly
                   />
                 </div>
+                
               </form>
               <hr />
               <ModeratorComments eventId={event._id} />
@@ -92,21 +93,23 @@ const EventModal = ({ event }) => {
             <div className="modal-footer">
               <button
                 type="button"
-                className="btn btn-secondary"
+                className="btn btn-secondary btn-wow-one"
                 data-dismiss="modal"
               >
                 Close
               </button>
-              <button onClick={handleEditEvent} className="btn btn-info">
+              <button onClick={handleEditEvent} className="btn btn-success btn-wow">
                 Request Edit in Event
               </button>
+              <a href="./abc.html"><button className="btn-wow-one btn-success">Budget</button></a>
               <button
                 onClick={handleShowParticipants}
-                className="btn btn-primary"
+                className="btn btn-success btn-wow-one"
                 disabled={event.status === "pending"}
               >
                 Show Participants
               </button>
+              
             </div>
           </div>
         </div>
@@ -135,7 +138,7 @@ const OrganizerMyEvents = () => {
     fun();
   }, []);
   return (
-    <div className="container">
+    <div className="org-container">
       <OrganizerNavbar />
       <h2>My Events</h2>
       {loading ? (

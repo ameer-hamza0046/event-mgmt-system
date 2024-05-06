@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="py-3 my-4">
-      <ul className="nav justify-content-center border-bottom pb-3 mb-3">
+    <footer className=" footercss">
+      <ul className="nav justify-content-center border-bottom pb-3">
         <li className="nav-item">
           <Link className="nav-link px-2 text-muted" to="/">
             Home
@@ -21,7 +21,7 @@ const Footer = () => {
           </Link>
         </li>
       </ul>
-      <p className="text-center text-muted">© 2022 Company, Inc</p>
+      <p className="text-center text-muted">Copyright © 2024 - All right reserved | AmiEvents</p>
     </footer>
   );
 };

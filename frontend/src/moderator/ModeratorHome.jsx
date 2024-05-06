@@ -25,7 +25,7 @@ const ModeratorHome = () => {
     fun();
   }, []);
   return (
-    <div className="container">
+    <div className="org-container">
       <ModeratorNavbar />
       {loading ? <Spinner /> : <UserDetails user={user} />}
       <ModeratorFooter />

@@ -24,7 +24,7 @@ const OrganizerHome = () => {
     fun();
   }, []);
   return (
-    <div className="container">
+    <div className="org-container">
       <OrganizerNavbar />
       {loading ? <Spinner /> : <UserDetails user={user} />}
       <OrganizerFooter />

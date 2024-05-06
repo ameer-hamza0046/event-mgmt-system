@@ -29,7 +29,7 @@ const ParticipateModal = ({ event }) => {
       {/* Button trigger modal */}
       <button
         type="button"
-        className="btn btn-outline-primary"
+        className="btn btn-success"
         data-toggle="modal"
         data-target={`#staticBackdrop${eventId}`}
       >

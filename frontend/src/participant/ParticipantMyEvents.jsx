@@ -130,7 +130,7 @@ const MyEvents = () => {
     }
   }, []);
   return (
-    <div className="container">
+    <div className="org-container">
       <ParticipantNavbar />
       <h2>My Events</h2>
       {loading ? (

@@ -209,7 +209,7 @@ const ApproveEventModal = ({ event }) => {
       {/* Button trigger modal */}
       <button
         type="button"
-        className="btn btn-primary px-4"
+        className="btn btn-success px-4"
         data-toggle="modal"
         data-target={`#staticBackdrop${eventId}`}
       >
@@ -286,7 +286,7 @@ const ModeratorShowEvent = () => {
     fun();
   }, []);
   return (
-    <div className="container">
+    <div className="org-container">
       <ModeratorNavBar />
       <h2>Event Details</h2>
       {loading ? (
@@ -324,14 +324,15 @@ const ModeratorShowEvent = () => {
             <Link
               to={`/moderator/${id}/view-pending-events`}
               type="button"
-              className="btn btn-outline-secondary px-4 me-md-2"
+              className="btn btn-secondary px-4 me-md-2"
             >
               Go Back
             </Link>
-            <button className="btn btn-outline-primary me-md-2 px-4">
+            <button className="btn btn-success btn-wow me-md-2 px-4">
               <a
                 href="https://www.mandurah.wa.gov.au/-/media/files/com/downloads/explore/events/organisers/events-application-form.pdf"
                 target="blank"
+                
               >
                 View Application Form
               </a>

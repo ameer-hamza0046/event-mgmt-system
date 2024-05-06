@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 const OrganizerFooter = () => {
   const { id } = useParams();
   return (
-    <footer className="py-3 my-4">
+    <footer className="org-footer">
       <ul className="nav justify-content-center border-bottom pb-3 mb-3">
         <li className="nav-item">
           <Link className="nav-link px-2 text-muted" to={`/organizer/${id}`}>

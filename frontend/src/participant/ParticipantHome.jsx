@@ -23,7 +23,7 @@ const ParticipantHome = () => {
     fun();
   }, []);
   return (
-    <div className="container">
+    <div className="org-container">
       <ParticipantNavbar />
       {loading ? <Spinner /> : <UserDetails user={user} />}
       <ParticipantFooter />

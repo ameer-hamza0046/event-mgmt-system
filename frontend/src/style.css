@@ -1,12 +1,163 @@
 .me-md-2 {
   margin-right: 0.5rem !important;
 }
-
+* {
+  margin: 0;
+}
 body {
-  /* background-color: #fff8ea;
-  color: black; */
+  background-image: url("pre-login/images/background.jpeg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center;
+  background-size: cover;
+  padding: 0;
+  margin: 0;
+}
+.container-next {
+  height: 750px;
+  margin: 150px;
+  background-color: rgb(95, 145, 95);
+  padding: 50px;
+  border-radius: 20px;
+  width: 60%;
+  margin-left: 18%;
+  color: white;
+}
+.container-next-login {
+  height: 600px;
+  margin: 150px;
+  background-color: rgb(95, 145, 95);
+  padding: 50px;
+  border-radius: 20px;
+  width: 60%;
+  margin-left: 18%;
+  color: white;
+}
+.btn-new {
+  width: 150px;
+  height: 50px;
+  color: white;
+  font-size: 1.5rem;
+}
+.hello {
+  margin-left: 20px;
+  color: black;
 }
 
-.homeImg {
-  /* border-radius: 500px; */
+/* .homeImg {
+  border-radius: 500px;
+} */
+.mainText {
+  margin-top: 200px;
+  font-size: 100px;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  color: black;
+}
+.mainText p {
+  color: green;
+  font-size: 40px;
+  font-family: "Times New Roman", Times, serif;
+}
+.navbar-brand {
+  font-size: 40px;
+  font-style: italic bold;
+}
+.navbar {
+  background-color: rgb(13, 15, 22);
+}
+.nav-text {
+  color: white;
+}
+.navwidth {
+  width: 100%;
+  /* border: ; */
+}
+.text-green {
+  color: green;
+}
+.beta {
+  background-color: rgb(95, 145, 95);
+  width: 50%;
+  height: 500px;
+  border-radius: 20px;
+  padding: 30px;
+  color: azure;
+  margin-top: 150px;
+}
+
+.footercss {
+  background-color: rgb(3, 43, 35);
+  height: 300x;
+  margin-bottom: 0px;
+  margin-top: 200px;
+  padding: 20px;
+}
+.btn-one {
+  width: 200px;
+  margin-left: 250px;
+  margin-top: 30px;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.container-about {
+  margin-top: 200px;
+  background-color: rgb(95, 145, 95);
+  padding: 30px;
+  border-radius: 20px;
+  font-size: 1.3rem;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+}
+.org-container {
+  width: 100%;
+}
+
+.list-one {
+  background-color: rgb(95, 145, 95);
+  color: white;
+}
+.body-one {
+  background-color: rgb(95, 145, 95);
+  padding: 10px;
+  border-radius: 30px;
+}
+.btn-wow {
+  width: 200px;
+  height: 60px;
+}
+.btn-wow a {
+  text-decoration: none;
+  color: white;
+}
+.btn-wow-one {
+  height: 50px;
+}
+.edit-page {
+  margin-top: 100px;
+  color: white;
+  height: 600px;
+  background-color: rgb(95, 145, 95);
+  width: 900px;
+  border-radius: 20px;
+  padding: 30px;
+  margin-left: 25%;
+  font-size: 1.5rem;
+}
+.nav-org {
+  background-color: black;
+  font-size: 1rem;
+  font-family: sans-serif;
+  color: green;
+}
+.btn-two {
+  border-radius: 20px;
+  color: white;
+}
+.org-footer {
+  margin-top: 600px;
+  background-color: black;
+  height: 200px;
 }

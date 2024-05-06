@@ -4,9 +4,9 @@ import { Link, useParams } from "react-router-dom";
 const ModeratorNavbar = () => {
   const { id } = useParams();
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <Link className="navbar-brand" to={`/organizer/${id}`}>
-        Navbar
+    <nav className="navbar navbar-expand-lg navbar-dark">
+      <Link className="navbar-brand text-success" to={`/organizer/${id}`}>
+        AmiEvents
       </Link>
       <button
         className="navbar-toggler"
@@ -22,7 +22,7 @@ const ModeratorNavbar = () => {
       <div className="collapse navbar-collapse" id="navbarNav">
         <ul className="navbar-nav">
           <li className="nav-item">
-            <Link className="nav-link" to={`/moderator/${id}`}>
+            <Link className="nav-link " to={`/moderator/${id}`}>
               Home
             </Link>
           </li>
